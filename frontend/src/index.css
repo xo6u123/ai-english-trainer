@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-base-900 text-slate-100 font-sans antialiased;
+    background-color: #0a0a12;
+    background-image:
+      radial-gradient(40rem 30rem at 12% -8%, rgba(139, 92, 246, 0.18), transparent 60%),
+      radial-gradient(36rem 28rem at 110% 8%, rgba(34, 211, 238, 0.14), transparent 60%),
+      radial-gradient(40rem 40rem at 50% 120%, rgba(232, 121, 249, 0.10), transparent 60%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  ::selection {
+    background: rgba(168, 85, 247, 0.35);
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(22, 24, 42, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+  .glass-strong {
+    background: rgba(15, 16, 24, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .text-grad {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(120deg, #c4b5fd 0%, #a855f7 40%, #22d3ee 100%);
+  }
+  .border-grad {
+    position: relative;
+  }
+  .border-grad::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.6), rgba(34, 211, 238, 0.4));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(139, 92, 246, 0.35); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(139, 92, 246, 0.55); }

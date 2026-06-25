@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+instance/
+
+# 環境變數
+.env
+
+# 前端
+frontend/node_modules/
+dist/
+
+# 課程報告 / Office 暫存檔
+*.docx
+*.pptx
+*.zip
+~$*
